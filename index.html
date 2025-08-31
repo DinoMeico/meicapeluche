@@ -4,54 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meica Peluche</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-        }
-        
-        .image-container {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .main-image {
-            max-width: 90vw;
-            max-height: 90vh;
-            height: auto;
-            width: auto;
-        }
-        
-        .clickable-area {
-            position: absolute;
-            bottom: 20%;
-            right: 30%;
-            width: 15%;
-            height: 20%;
-            cursor: pointer;
-            background-color: rgba(255, 0, 0, 0.1);
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-        }
-        
-        .clickable-area:hover {
-            background-color: rgba(255, 0, 0, 0.3);
-        }
-        
-        .clickable-area:active {
-            background-color: rgba(255, 0, 0, 0.5);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="image-container">
-        <img src="img/front.jpg" class="main-image">
+        <img src="img/front.png" class="main-image">
         <div class="clickable-area" onclick="playSound()"></div>
     </div>
     
