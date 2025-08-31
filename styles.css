@@ -29,20 +29,11 @@ body {
 
 .clickable-area {
     position: absolute;
-    bottom: calc(20% - 90px);
+    bottom: calc(20% - 80px);
     right: calc(30% - 12px);
     width: 15%;
     height: 15%;
     cursor: pointer;
-    background-color: rgba(255, 0, 0, 0.1);
+    background-color: transparent;
     border-radius: 50%;
-    transition: background-color 0.3s ease;
-}
-
-.clickable-area:hover {
-    background-color: rgba(255, 0, 0, 0.3);
-}
-
-.clickable-area:active {
-    background-color: rgba(255, 0, 0, 0.5);
 }
