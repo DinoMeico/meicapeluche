@@ -25,15 +25,29 @@ body {
     -moz-user-drag: none;
     -o-user-drag: none;
     pointer-events: auto;
+    transition: transform 0.2s ease;
+}
+
+.image-container:hover .main-image {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-1deg) scale(0.998);
 }
 
 .clickable-area {
     position: absolute;
-    bottom: calc(20% - 90px);
+    bottom: calc(20% - 80px);
     right: calc(30% - 12px);
     width: 15%;
     height: 15%;
     cursor: pointer;
     background-color: transparent;
     border-radius: 50%;
+    z-index: 10;
+}
+
+.clickable-area:hover {
+    transform: scale(1.05);
+}
+
+.clickable-area:active {
+    transform: scale(0.95);
 }
