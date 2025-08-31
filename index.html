@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meica Peluche</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .main-image {
+            max-width: 90vw;
+            max-height: 90vh;
+            height: auto;
+            width: auto;
+        }
+        
+        .clickable-area {
+            position: absolute;
+            bottom: 20%;
+            right: 30%;
+            width: 15%;
+            height: 20%;
+            cursor: pointer;
+            background-color: rgba(255, 0, 0, 0.1);
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+        
+        .clickable-area:hover {
+            background-color: rgba(255, 0, 0, 0.3);
+        }
+        
+        .clickable-area:active {
+            background-color: rgba(255, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="img/front.jpg" class="main-image">
+        <div class="clickable-area" onclick="playSound()"></div>
+    </div>
+    
+    <audio id="peluche-sound" preload="auto">
+        <source src="sounds/dinomeico.wav" type="audio/wav">
+    </audio>
+    
+    <script>
+        function playSound() {
+            const audio = document.getElementById('peluche-sound');
+            audio.currentTime = 0;
+            audio.play().catch(error => {
+                console.log('Error al reproducir el sonido:', error);
+            });
+        }
+    </script>
+</body>
+</html>
