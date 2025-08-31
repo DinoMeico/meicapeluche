@@ -19,12 +19,18 @@ body {
     max-height: 90vh;
     height: auto;
     width: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    pointer-events: auto;
 }
 
 .clickable-area {
     position: absolute;
-    bottom: calc(20% - 20px);
-    right: 30%;
+    bottom: calc(20% - 50px);
+    right: calc(30% - 15px);
     width: 15%;
     height: 15%;
     cursor: pointer;
