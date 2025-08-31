@@ -28,9 +28,7 @@ body {
     transition: transform 0.2s ease;
 }
 
-.image-container:hover .main-image {
-    transform: perspective(1000px) rotateX(2deg) rotateY(-1deg) scale(0.998);
-}
+
 
 .clickable-area {
     position: absolute;
@@ -42,12 +40,17 @@ body {
     background-color: transparent;
     border-radius: 50%;
     z-index: 10;
+    transition: all 0.2s ease;
 }
 
 .clickable-area:hover {
-    transform: scale(1.05);
+    background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 70%);
+    backdrop-filter: blur(1px) contrast(0.9) brightness(0.95);
+    transform: scale(1.02);
 }
 
 .clickable-area:active {
-    transform: scale(0.95);
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, transparent 60%);
+    backdrop-filter: blur(2px) contrast(0.8) brightness(0.9);
+    transform: scale(0.98);
 }
