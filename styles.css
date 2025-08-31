@@ -29,7 +29,7 @@ body {
 
 .clickable-area {
     position: absolute;
-    bottom: calc(20% - 86px);
+    bottom: calc(20% - 90px);
     right: calc(30% - 12px);
     width: 15%;
     height: 15%;
