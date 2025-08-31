@@ -16,18 +16,6 @@
         <div class="clickable-area" onclick="playSound()"></div>
     </div>
     
-    <audio id="peluche-sound" preload="auto">
-        <source src="sounds/dinomeico.wav" type="audio/wav">
-    </audio>
-    
-    <script>
-        function playSound() {
-            const audio = document.getElementById('peluche-sound');
-            audio.currentTime = 0;
-            audio.play().catch(error => {
-                console.log('Error al reproducir el sonido:', error);
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
