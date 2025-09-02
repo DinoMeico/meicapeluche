@@ -1,4 +1,7 @@
-const audioFiles = ['dinomeico.wav', 'clic.mp3'];
+const audioFiles = [
+    'dinomeico.wav',
+    'clic.mp3'
+];
 
 function checkAudioFiles() {
     audioFiles.forEach((file, index) => {
