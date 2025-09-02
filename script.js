@@ -1,25 +1,13 @@
-const audioFiles = [];
+const audioFiles = ['dinomeico.wav', 'clic.mp3'];
 
-async function loadAudioFiles() {
-    try {
-        const response = await fetch('sounds/');
-        const text = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(text, 'text/html');
-        const links = doc.querySelectorAll('a[href$=".wav"], a[href$=".mp3"], a[href$=".ogg"]');
-        
-        if (links.length > 0) {
-            audioFiles.length = 0;
-            links.forEach(link => {
-                const filename = link.getAttribute('href');
-                if (filename && !filename.includes('../')) {
-                    audioFiles.push(filename);
-                }
-            });
-        }
-    } catch (error) {
-        console.log('No se pudo cargar la lista de archivos de audio');
-    }
+function checkAudioFiles() {
+    audioFiles.forEach((file, index) => {
+        const audio = new Audio(`sounds/${file}`);
+        audio.addEventListener('error', () => {
+            console.log(`Archivo no encontrado: ${file}`);
+            audioFiles.splice(index, 1);
+        });
+    });
 }
 
 function playSound() {
@@ -38,4 +26,4 @@ function playSound() {
     });
 }
 
-loadAudioFiles();
+checkAudioFiles();
