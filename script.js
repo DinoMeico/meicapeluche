@@ -1,5 +1,4 @@
-const audioFiles = ['dinomeico.wav', 'clic.mp3'];
-const otherAudioFiles = ['dinomeico.wav'];
+const audioFiles = ['clic.mp3', 'a1.mp3'];
 let currentAudio = null;
 
 function checkAudioFiles() {
@@ -8,12 +7,6 @@ function checkAudioFiles() {
         audio.addEventListener('error', () => {
             console.log(`Archivo no encontrado: ${file}`);
             audioFiles.splice(index, 1);
-            if (file !== 'clic.mp3') {
-                const otherIndex = otherAudioFiles.indexOf(file);
-                if (otherIndex > -1) {
-                    otherAudioFiles.splice(otherIndex, 1);
-                }
-            }
         });
     });
 }
@@ -24,6 +17,7 @@ function playSound() {
         currentAudio.currentTime = 0;
     }
     
+    // Siempre reproducir clic.mp3 primero
     const clickAudio = new Audio('sounds/clic.mp3');
     currentAudio = clickAudio;
     
@@ -32,9 +26,12 @@ function playSound() {
     });
     
     clickAudio.addEventListener('ended', () => {
-        if (otherAudioFiles.length > 0) {
-            const randomIndex = Math.floor(Math.random() * otherAudioFiles.length);
-            const selectedAudio = otherAudioFiles[randomIndex];
+        // Filtrar los audios que no sean clic.mp3
+        const otherAudios = audioFiles.filter(file => file !== 'clic.mp3');
+        
+        if (otherAudios.length > 0) {
+            const randomIndex = Math.floor(Math.random() * otherAudios.length);
+            const selectedAudio = otherAudios[randomIndex];
             
             const randomAudio = new Audio(`sounds/${selectedAudio}`);
             currentAudio = randomAudio;
