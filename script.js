@@ -1,4 +1,4 @@
-const audioFiles = ['clic.mp3', 'a1.wav'];
+const audioFiles = ['clic.mp3', 'a1.wav', 'a2.wav' ];
 let currentAudio = null;
 
 function checkAudioFiles() {
